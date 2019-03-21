@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Modal extends Component {
 
-  displayInfo = (info) => {
+const Modal = props => {
+
+  function displayInfo (info) {
     switch(info) {
       case 'Modal A':
         return <div className="modal-info">This is Modal A</div>
@@ -12,34 +13,31 @@ class Modal extends Component {
         return null
     }
   }
-
-  render() {
-
-    const divStyle = {
-      display: this.props.modalDisplay ? 'block' : 'none',
-    };
+  
+  const divStyle = {
+    display: props.modalDisplay ? 'block' : 'none',
+  };
 
     return (
       <div 
         className="modal"
-        onClick={ () => this.props.selectModal() } 
+        onClick={ props.selectModal } 
         style={divStyle}
       >
         <div className="modal-content"
-          onClick={ (e) => e.stopPropagation() }
+          onClick={ e => e.stopPropagation() }
         >
           <span 
             className="close"
-            onClick={ () => this.props.selectModal() }
+            onClick={ props.selectModal }
             >&times;
           </span>
           <div className="modal-flex">
-            {this.displayInfo(this.props.modalInfo)}
+            {displayInfo( props.modalInfo )}
           </div>
         </div>
       </div>
     );
-  }
 }
 
 export default Modal;

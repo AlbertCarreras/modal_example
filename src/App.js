@@ -13,7 +13,7 @@ class App extends Component {
   selectModal = (info) => {
     this.setState({
       modal: !this.state.modal,
-      modalInfo: info
+      modalInfo: info || null
     })
   }
   
