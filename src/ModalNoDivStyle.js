@@ -33,7 +33,6 @@ class Modal extends Component {
     e.stopPropagation()
     this.props.closeModal()
   }
-  
 
   render () {
 
