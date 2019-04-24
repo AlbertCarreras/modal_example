@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Modal from './Modal2'
+// import Modal from './ModalDivStyle'
+import Modal from './ModalNoDivStyle'
 
 
 class App extends Component {
@@ -8,7 +9,6 @@ class App extends Component {
   state = {
     modal: false,
     modalInfo: "",
-    input: ""
   }
 
   selectModal = (info = "") => {
@@ -18,20 +18,10 @@ class App extends Component {
     })
   }
 
-  handleChange = (a) => {
-    this.setState({
-      input: a.target.value
-    })
-  } 
 
   render() {
     return (
       <div className="App">
-          <input 
-            onChange={this.handleChange}
-            value={this.state.input}
-            placeholder="Enter values to check re-rendering of Modal Component"
-            ></input>
           <p onClick={ () => this.selectModal('Modal A') }>
             Open Modal A
           </p>
