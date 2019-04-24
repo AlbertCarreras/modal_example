@@ -31,7 +31,7 @@ class App extends Component {
           <Modal 
             modalDisplay={this.state.modal}
             modalInfo={this.state.modalInfo}
-            selectModal={this.selectModal}
+            closeModal={this.selectModal}
           />
       </div>
     );

@@ -31,7 +31,7 @@ class Modal extends Component {
 
   closeModal = (e) => {
     e.stopPropagation()
-    this.props.selectModal()
+    this.props.closeModal()
   }
   
 
