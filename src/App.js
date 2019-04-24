@@ -30,6 +30,7 @@ class App extends Component {
           <input 
             onChange={this.handleChange}
             value={this.state.input}
+            placeholder="Enter values to check re-rendering of Modal Component"
             ></input>
           <p onClick={ () => this.selectModal('Modal A') }>
             Open Modal A
