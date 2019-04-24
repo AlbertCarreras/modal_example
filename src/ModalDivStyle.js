@@ -37,7 +37,7 @@ class Modal extends Component {
 
   render () {
     const divStyle = {
-      display: this.props.modalDisplay ? 'block' : 'none',
+      display: this.props.displayModal ? 'block' : 'none',
     };
 
     return (

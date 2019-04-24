@@ -29,7 +29,7 @@ class App extends Component {
             Open Modal B
           </p>
           <Modal 
-            modalDisplay={this.state.modal}
+            displayModal={this.state.modal}
             modalInfo={this.state.modalInfo}
             closeModal={this.selectModal}
           />

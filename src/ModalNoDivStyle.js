@@ -59,7 +59,7 @@ class Modal extends Component {
       </div>
     )
 
-    return ( this.props.modalDisplay ? modal : null);
+    return ( this.props.displayModal ? modal : null);
   }
 }
 
