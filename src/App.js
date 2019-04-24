@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
 import './App.css';
-import Modal from './Modal'
+import Modal from './Modal2'
 
 
 class App extends Component {
 
   state = {
     modal: false,
-    modalInfo: null
+    modalInfo: "",
+    input: ""
   }
 
-  selectModal = (info) => {
+  selectModal = (info = "") => {
     this.setState({
       modal: !this.state.modal,
-      modalInfo: info || null
+      modalInfo: info
     })
   }
-  
+
+  handleChange = (a) => {
+    this.setState({
+      input: a.target.value
+    })
+  } 
+
   render() {
     return (
       <div className="App">
+          <input 
+            onChange={this.handleChange}
+            value={this.state.input}
+            ></input>
           <p onClick={ () => this.selectModal('Modal A') }>
             Open Modal A
           </p>
