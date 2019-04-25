@@ -31,8 +31,7 @@ class App extends Component {
           <Modal 
             displayModal={this.state.modal}
             modalInfo={this.state.modalInfo}
-            closeModal={this.selectModal}
-          />
+            closeModal={this.selectModal}/>
       </div>
     );
   }

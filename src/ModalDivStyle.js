@@ -2,16 +2,6 @@ import React, { Component } from 'react';
 
 
 class Modal extends Component {
-
-  shouldComponentUpdate(nextProps) {
-    if (nextProps.modalInfo === this.props.modalInfo) {
-      return false
-    }
-    else {
-      return true
-    }
-  }
-
   
   displayInfo = () => {
     switch(this.props.modalInfo) {
