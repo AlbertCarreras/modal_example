@@ -1,10 +1,9 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-
-class Modal extends PureComponent {
+function Modal (props) {
   
-  displayInfo = () => {
-    switch(this.props.modalInfo) {
+  function displayInfo () {
+    switch(props.modalInfo) {
       case 'Modal A':
         return <div className="modal-info">This is Modal A</div>
       case 'Modal B':
@@ -14,21 +13,19 @@ class Modal extends PureComponent {
     }
   }
 
-  closeModal = (e) => {
+  function closeModal(e) {
     e.stopPropagation()
-    this.props.closeModal()
+    props.closeModal()
   }
   
-
-  render () {
-    const divStyle = {
-      display: this.props.displayModal ? 'block' : 'none',
-    };
+  const divStyle = {
+    display: props.displayModal ? 'block' : 'none',
+  };
 
     return (
       <div 
         className="modal"
-        onClick={ this.closeModal }
+        onClick={ closeModal }
         style={divStyle}>
 
         <div className="modal-content"
@@ -36,18 +33,17 @@ class Modal extends PureComponent {
           
           <span 
             className="close"
-            onClick={ this.closeModal }>&times;
+            onClick={ closeModal }>&times;
           </span>
 
           <div className="modal-flex">
-            {this.displayInfo()}
+            {displayInfo()}
           </div>
 
         </div>
 
       </div>
     );
-  }
 }
 
 export default Modal;

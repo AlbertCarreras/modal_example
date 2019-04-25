@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './App.css';
 // import Modal from './ModalDivStyle'
 import Modal from './ModalNoDivStyle'
 
 
-class App extends Component {
+class App extends PureComponent {
 
   state = {
     modal: false,
