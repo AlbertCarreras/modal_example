@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal (props) {
+const Modal = props => {
   
   function displayInfo () {
     switch(props.modalInfo) {
