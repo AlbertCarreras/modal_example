@@ -3,23 +3,18 @@ import React, { Component } from 'react';
 
 class Modal extends Component {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      displayInfo: this.displayInfo(this.props.modalInfo)
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.modalInfo === this.props.modalInfo) {
+      return false
+    }
+    else {
+      return true
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.modalInfo !== this.props.modalInfo) {
-      this.setState({
-        displayInfo: this.displayInfo(this.props.modalInfo)
-      })
-    }
-  }
-
-  displayInfo = (info) => {
-    switch(info) {
+  
+  displayInfo = () => {
+    switch(this.props.modalInfo) {
       case 'Modal A':
         return <div className="modal-info">This is Modal A</div>
       case 'Modal B':
@@ -55,7 +50,7 @@ class Modal extends Component {
           </span>
 
           <div className="modal-flex">
-            {this.state.displayInfo}
+            {this.displayInfo()}
           </div>
 
         </div>
