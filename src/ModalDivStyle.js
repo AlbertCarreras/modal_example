@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 
-class Modal extends Component {
+class Modal extends PureComponent {
   
   displayInfo = () => {
     switch(this.props.modalInfo) {
